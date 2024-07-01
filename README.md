@@ -159,6 +159,10 @@ It's advantageous that when building Docker images, we don't need to explicitly 
 
 **3. Login to docker cli**: `docker login`
 
+**4. Tag the image**: 
+
+`docker tag local_image_tag docker_hub_username/repository_name:tag`
+
 **4. Push to the repository**: 
 
 `docker push your_username/your_reponame:tagname`
