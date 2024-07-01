@@ -3,7 +3,7 @@ const mongoose = require('mongoose');
 const userRoutes = require('./routes/user');
 const productRoutes = require('./routes/product');
 const orderRoutes = require('./routes/order');
-const config = require('./config');
+require("dotenv").config();
 
 const app = express();
 
@@ -16,7 +16,7 @@ app.use('/api/products', productRoutes);
 app.use('/api/orders', orderRoutes);
 
 // Connect to MongoDB
-mongoose.connect(config.mongoURI)
+mongoose.connect(process.env.MONGO_URL)
     .then(() => console.log('MongoDB connected'))
     .catch(err => console.log(err));
 
